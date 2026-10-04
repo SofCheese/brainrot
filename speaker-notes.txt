@@ -84,49 +84,49 @@ The PS mean is 3.78 out of five. This suggests agreement with statements about s
 
 Source: Report Table 4.6 and Appendix A
 
-12. Evidence — Lê Cao Thanh
+12. Evidence — Lê Cao Thành
 How we  tested it. 
 
 Our report presents a cross-sectional quantitative survey. We used 28 substantive Likert items across six constructs. We examined descriptions, reliability and exploratory structure before testing relationships. The results shown here are five separate regressions, not one model controlling for all predictors. Optional open responses were supplementary.
 
 Source: Report Chapters 3–4
 
-13. Evidence — Lê Cao Thanh
+13. Evidence — Lê Cao Thành
 Where students  spend their attention. 
 
 TikTok was the most-used platform for 61.7 percent of the sample. Almost half selected the two-to-three-hour or three-plus-hour daily short-video categories. Brainrot-specific exposure was lower: 59.7 percent selected under 15 or 15-to-30 minutes, and 11.4 percent reported none in the past seven days. These are different measures and recall periods; we do not equate all short videos with brainrot.
 
 Source: Report Table 4.1 and daily-duration tables
 
-14. Evidence — Lê Cao Thanh
+14. Evidence — Lê Cao Thành
 Consistency  with a caveat. 
 
 We first checked internal consistency. SI, PEV, PS and BCC had alpha values between .789 and .872. AI was .630 and UXF was .595. We retained the reported measures, but we should not describe every scale as highly reliable. The weaker AI and UXF reliability is a limitation.
 
 Source: Report Tables 4.8–4.13
 
-15. Evidence — Lê Cao Thanh
+15. Evidence — Lê Cao Thành
 Exploring the  measurement structure. 
 
 The predictor KMO was .884 and the BCC KMO was .894, with significant Bartlett tests. The reported PCA table identifies five predictor components explaining 57.895 percent of variance. BCC has one component explaining 56.839 percent. We use the table values, which differ slightly from the report narrative. This does not mean BCC has five dimensions or that factor separation is fully confirmed.
 
 Source: Report Tables 4.14–4.17; values taken from tables
 
-16. Evidence — Lê Cao Thanh
+16. Evidence — Lê Cao Thành
 Two associations  stand out. 
 
 Social Influence has the largest observed correlation, .673, followed by Perceived Entertainment Value at .632. PS is .430, UXF .357, and AI .222. All five associations are positive and statistically significant. These are correlations, so we cannot conclude that one factor causes consumption or that it has the largest independent effect.
 
 Source: Report Tables 4.18, 4.22, 4.26, 4.30 and 4.34
 
-17. Evidence — Lê Cao Thanh
+17. Evidence — Lê Cao Thành
 Five tests.  Positive associations. 
 
 The separate regressions support the hypothesised positive associations. Social Influence alone accounts for 45.3 percent of the variation in BCC in its simple model, followed by 40 percent for PEV. These percentages overlap and must not be added. Standardised beta equals Pearson r in these single-predictor models. This is not an adjusted ranking of determinants.
 
 Source: Report Tables 4.19–4.38
 
-18. Evidence — Lê Cao Thanh
+18. Evidence — Lê Cao Thành
 The social context  deserves attention. 
 
 The pattern makes social context and entertainment motives important areas to consider. But platform factors also have positive associations, and we have not isolated independent effects. Our practical question is how to support intentional use while recognising why students watch. Chí Kiên will connect these findings to recommendations.

@@ -1,15 +1,11 @@
-# Brainrot · TAHT Research Presentation
+# Bản cập nhật: ảnh thực tế ở 8 slide + bỏ nhãn góc phải
 
-Toàn bộ mã nguồn website tĩnh, gồm HTML, CSS, JavaScript, 24 slide, speaker notes, font và ảnh. Không cần npm hay bước build.
-
-## Đưa lên GitHub Pages
-1. Giải nén ZIP này.
-2. Tạo repository Public trên GitHub, ví dụ brainrot-presentation.
-3. Chọn Add file > Upload files. Upload toàn bộ NỘI DUNG thư mục vừa giải nén, giữ nguyên thư mục assets. index.html phải nằm ngay ở thư mục gốc repository, không nằm trong một thư mục lồng thêm. Không upload riêng file ZIP.
-4. Commit changes. Vào Settings > Pages > Build and deployment: Source = Deploy from a branch; Branch = main; Folder = /(root); Save.
-5. Chờ GitHub triển khai, rồi mở URL hiển thị trong Settings > Pages. URL thường có dạng https://USERNAME.github.io/brainrot-presentation/.
-
-Giữ file .nojekyll nếu công cụ upload của bạn hiển thị file này; nó cho GitHub biết đây là website tĩnh thuần. Website dùng đường dẫn tương đối nên hoạt động trong repository Pages.
+BẢN NÀY KHÔNG CẦN THƯ MỤC ASSETS.
+1. Giải nén ZIP vào một thư mục mới trên máy.
+2. Trong repository GitHub cũ, tại trang có index.html, chọn Add file > Upload files.
+3. Chọn TẤT CẢ file vừa giải nén và upload cùng lúc, rồi Commit changes. Các file code trùng tên sẽ được cập nhật.
+4. Giữ tên ảnh nguyên vẹn. Tất cả ảnh, font và code nằm cùng cấp với index.html. Thư mục assets cũ trên GitHub có thể giữ nguyên, bản mới không dùng nó.
+5. Chờ GitHub Pages triển khai xong, mở lại trang và Ctrl + F5.
 
 ## Sửa nội dung
 - slides.json: tiêu đề, nội dung HTML, nguồn và lời thuyết trình của 24 slide.
@@ -17,7 +13,8 @@ Giữ file .nojekyll nếu công cụ upload của bạn hiển thị file này;
 - app.js: điều hướng, tìm kiếm, orbit và các tương tác.
 - style.css + immersive.css: bố cục, màu, hiệu ứng glass và thiết kế responsive.
 - fonts.css + font-*.ttf: font cục bộ.
-- assets/: toàn bộ hình ảnh.
+- Các file .png/.jpg ở thư mục gốc: toàn bộ hình ảnh.
+- IMAGE_CREDITS.md: nguồn ảnh.
 - speaker-notes.txt: bản lời thuyết trình tải xuống; cập nhật cùng slides.json nếu sửa lời nói.
 
 ## Xem thử trên máy
