@@ -40,3 +40,166 @@ $('startpage').onclick=backToStart;$('quotestart').onclick=backToStart;
 $('jumptoend').onclick=()=>setScene('wrap');$('backchapters').onclick=()=>setScene('hub');$('prev').onclick=previous;$('next').onclick=next;$('notes').onclick=notes;$('closenotes').onclick=notes;$('overview').onclick=overview;$('closegrid').onclick=()=>$('grid').close();$('full').onclick=full;$('pauseorbit').onclick=()=>{paused=!paused;$('pauseorbit').textContent=paused?'Resume orbit':'Pause orbit';$('pauseorbit').setAttribute('aria-pressed',String(paused))};$('breakloop').onclick=()=>{broken=!broken;$('wrap').classList.toggle('loop-broken',broken);$('wrap-title').innerHTML=broken?'Your attention.<br><em>Your choice.</em>':'Who’s in <em>control?</em>';$('wrap-sub').textContent=broken?'Create a stopping point. Keep the choice yours.':'Five forces. One attention.';$('breakloop').textContent=broken?'Replay the loop':'Break the loop';$('orbit-detail').textContent=broken?'The goal: more intentional viewing, with fewer unplanned interruptions.':'Drag to orbit · Select a character to revisit a finding';$('pauseorbit').disabled=broken};$('orbital').addEventListener('pointerdown',e=>{dragging=true;dragLast=e.clientX;dragDistance=0});window.addEventListener('pointermove',e=>{if(dragging){const dx=e.clientX-dragLast;dragDistance+=Math.abs(dx);angle+=dx*.006;dragLast=e.clientX}else if(['intro','topic'].includes(scene)&&!reduced){document.documentElement.style.setProperty('--mx',(e.clientX/innerWidth-.5)*2);document.documentElement.style.setProperty('--my',(e.clientY/innerHeight-.5)*2)}});window.addEventListener('pointerup',()=>dragging=false);window.addEventListener('pointercancel',()=>dragging=false);$('orbital').addEventListener('wheel',e=>{if(Math.abs(e.deltaX)>Math.abs(e.deltaY)){e.preventDefault();angle+=e.deltaX*.004}},{passive:false});document.addEventListener('keydown',e=>{if($('grid').open||e.target.closest('input,textarea,select'))return;if(['ArrowRight','PageDown',' '].includes(e.key)&&e.target.tagName!=='BUTTON'){e.preventDefault();next()}else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();previous()}else if(e.key==='Home')backToStart();else if(e.key==='End')setScene('wrap');else if(e.key.toLowerCase()==='n')notes();else if(e.key.toLowerCase()==='g')overview();else if(e.key.toLowerCase()==='f')full();else if(e.key==='Escape'&&!$('notepanel').hidden)notes();else if(['1','2','3','4'].includes(e.key))go(chapters[+e.key-1].start)});window.onhashchange=readHash;let tx=0,ty=0;$('deck').addEventListener('touchstart',e=>{tx=e.changedTouches[0].clientX;ty=e.changedTouches[0].clientY},{passive:true});$('deck').addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*2)dx<0?next():previous()},{passive:true});init();
 
 document.addEventListener('fullscreenchange',()=>{$('full').innerHTML=document.fullscreenElement?'Exit full screen <kbd>F</kbd>':'Full screen <kbd>F</kbd>';requestAnimationFrame(()=>{if(scene==='wrap')placeOrbit()})});
+
+/* Word of the Year: restore the earlier layout after Search. */
+(() => {
+  const reveal = document.getElementById('reveal');
+  if (!reveal) return;
+
+  reveal.innerHTML = `
+    <div class="woty-result">
+      <h2 class="woty-heading">
+        From internet slang<br>
+        to <em>Word of the Year.</em>
+      </h2>
+
+      <div class="woty-main">
+        <strong class="woty-year">2024</strong>
+
+        <div class="woty-description">
+          <h3>“brain rot”</h3>
+          <p>Oxford Word of the Year</p>
+        </div>
+      </div>
+
+      <div class="woty-actions">
+        <button id="reveal-next" class="primary">
+          Continue
+        </button>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('reveal-next').onclick = () => {
+    setScene('topic');
+  };
+
+  const style = document.createElement('style');
+  style.id = 'woty-result-style';
+
+  style.textContent = `
+    /* Only change the screen after the search result appears. */
+    body[data-scene="intro"].revealing .building {
+      animation: none;
+      opacity: 0.12;
+      filter: blur(18px);
+    }
+
+    body[data-scene="intro"].revealing #intro {
+      padding: 30px;
+    }
+
+    body[data-scene="intro"].revealing .search-panel {
+      width: min(1500px, 100%);
+      min-height: min(680px, 82dvh);
+      padding: clamp(28px, 4vw, 65px);
+      border-radius: 28px;
+      text-align: left;
+      background: linear-gradient(
+        130deg,
+        rgba(143, 96, 58, 0.48),
+        rgba(44, 29, 22, 0.85)
+      );
+      display: flex;
+      justify-content: center;
+      overflow: visible;
+    }
+
+    body[data-scene="intro"].revealing
+    .search-panel > .mini-label {
+      display: none;
+    }
+
+    #intro #reveal {
+      width: 100%;
+    }
+
+    #intro #reveal .woty-heading {
+      margin: 0;
+      color: #f6f1e7;
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(30px, 3.8vw, 58px);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+    }
+
+    #intro #reveal .woty-heading em {
+      font-weight: 600;
+    }
+
+    #intro #reveal .woty-main {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: clamp(30px, 5vw, 90px);
+      margin: clamp(40px, 6vh, 75px) 0;
+    }
+
+    #intro #reveal .woty-year {
+      display: block;
+      flex-shrink: 0;
+      color: #f6f1e7;
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(110px, 16vw, 250px);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.065em;
+    }
+
+    #intro #reveal .woty-description h3 {
+      margin: 0 0 20px;
+      color: #f6f1e7;
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(35px, 4.3vw, 65px);
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    #intro #reveal .woty-description p {
+      margin: 0;
+      color: #f6f1e7;
+      font-size: clamp(18px, 2vw, 29px);
+      line-height: 1.4;
+    }
+
+    #intro #reveal .woty-actions {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    #intro #reveal #reveal-next {
+      margin: 0;
+    }
+
+    @media (max-width: 700px) {
+      body[data-scene="intro"].revealing #intro {
+        padding: 20px 14px;
+      }
+
+      body[data-scene="intro"].revealing .search-panel {
+        min-height: 0;
+        padding: 30px 22px;
+        border-radius: 22px;
+      }
+
+      #intro #reveal .woty-main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
+        margin: 40px 0;
+      }
+
+      #intro #reveal .woty-year {
+        font-size: clamp(100px, 28vw, 170px);
+      }
+
+      #intro #reveal .woty-description h3 {
+        margin-bottom: 12px;
+      }
+    }
+  `;
+
+  document.getElementById('woty-result-style')?.remove();
+  document.head.appendChild(style);
+})();
