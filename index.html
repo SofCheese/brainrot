@@ -649,5 +649,99 @@
 </dialog>
 <script src="app.js?v=clean-20261006">
 </script>
+<!-- Presentation cleanup: captions, student photo, model and wrap-up -->
+<style id="presentation-cleanup-style">
+  /* Hide small slide notes and photo captions. */
+  #deck .source,
+  #deck .caption,
+  #deck figcaption,
+  #wrap .wrap-note {
+    display: none !important;
+  }
+
+  /* Remove the wrap-up subtitle and the text below YOU. */
+  #wrap-sub,
+  #orbital .you > span {
+    display: none !important;
+  }
+
+  /* Keep the new student image neatly framed. */
+  #deck .editorial-photo img[data-campus-photo] {
+    display: block;
+    width: 100%;
+    aspect-ratio: 735 / 410;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Positive association is shown as a simple plus sign. */
+  #deck .modelrelation .association-plus {
+    display: block;
+    margin-bottom: 10px;
+    color: #edc797;
+    font-size: clamp(32px, 4vw, 56px);
+    font-weight: 500;
+    line-height: 1;
+  }
+</style>
+
+<script>
+(() => {
+  function installPresentationCleanup() {
+    const deck = document.getElementById("deck");
+    if (!deck) return;
+
+    function updateSlide() {
+      /* Replace only the image on "A student life". */
+      const heading = deck.querySelector("h1");
+      const title = heading
+        ? heading.textContent.replace(/\s+/g, " ").trim()
+        : "";
+
+      if (/A student life/i.test(title)) {
+        const photo = deck.querySelector(".editorial-photo img");
+
+        if (photo && !photo.hasAttribute("data-campus-photo")) {
+          photo.setAttribute("data-campus-photo", "");
+          photo.src = "./students-campus.png";
+          photo.alt = "A group of university students on campus";
+        }
+      }
+
+      /* Replace the label while keeping the model arrow. */
+      deck.querySelectorAll(".modelrelation").forEach((relation) => {
+        if (/positive associations?/i.test(relation.textContent)) {
+          relation.innerHTML =
+            '<span class="association-plus" aria-label="Positive association">+</span>' +
+            '<strong aria-hidden="true">→</strong>';
+        }
+      });
+    }
+
+    /*
+      Slides are rendered again when navigating.
+      Reapply the changes whenever the slide content changes.
+    */
+    const observer = new MutationObserver(updateSlide);
+    observer.observe(deck, {
+      childList: true,
+      subtree: true
+    });
+
+    updateSlide();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      installPresentationCleanup,
+      { once: true }
+    );
+  } else {
+    installPresentationCleanup();
+  }
+})();
+</script>
 </body>
 </html>
