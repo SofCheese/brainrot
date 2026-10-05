@@ -713,8 +713,7 @@
       deck.querySelectorAll(".modelrelation").forEach((relation) => {
         if (/positive associations?/i.test(relation.textContent)) {
           relation.innerHTML =
-            '<span class="association-plus" aria-label="Positive association">+</span>' +
-            '<strong aria-hidden="true">→</strong>';
+  '<span class="association-plus" aria-label="Positive association">+</span>';
         }
       });
     }
