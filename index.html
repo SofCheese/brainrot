@@ -1,12 +1,653 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#704f38"><title>Brainrot · TAHT Research Presentation</title><meta name="description" content="A research presentation on brainrot content consumption among university students in Northern Vietnam. National Economics University, BFT 67A."><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23704f38'/%3E%3Ctext x='7' y='24' font-family='Georgia' font-weight='bold' font-size='25' fill='%23f6f1e7'%3EB%3C/text%3E%3C/svg%3E"><link rel="stylesheet" href="fonts.css"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="immersive.css"></head><body data-scene="hook"><div class="ambient" aria-hidden="true"></div><header class="toolbar glass"><div class="traffic" aria-hidden="true"><i></i><i></i><i></i></div><button class="brand" id="home" aria-label="Open chapter menu">BR<span>TAHT / RESEARCH</span></button><nav id="chaptertabs" aria-label="Presentation chapters"></nav><div class="tools"><button id="startpage" title="Return to the opening hook">↶ Start</button><button id="overview" aria-label="Open slide overview">Slides <kbd>G</kbd></button><button id="notes" aria-pressed="false">Notes <kbd>N</kbd></button><button id="full">Full screen <kbd>F</kbd></button></div></header><main id="deck" aria-label="Presentation slides"></main>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#704f38">
+<title>Brainrot · TAHT Research Presentation</title>
+<meta name="description" content="A research presentation on brainrot content consumption among university students in Northern Vietnam. National Economics University, BFT 67A.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23704f38'/%3E%3Ctext x='7' y='24' font-family='Georgia' font-weight='bold' font-size='25' fill='%23f6f1e7'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="immersive.css">
+<style>
+
+    /* Remove only the unwanted Phenomenon captions. */
+    #deck #reveal-flow,
+    #deck .phenomenon-stage > .source {
+      display: none !important;
+    }
+
+    /* Keep the result inside the viewport. */
+    body[data-scene="intro"].revealing #intro {
+      padding: clamp(14px, 3vh, 30px);
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    body[data-scene="intro"].revealing .search-panel {
+      box-sizing: border-box;
+      width: min(1180px, 100%);
+      max-width: 100%;
+      min-width: 0;
+      min-height: 0;
+      margin: auto;
+      padding: clamp(24px, 4vw, 52px);
+      border-radius: 28px;
+      text-align: left;
+      overflow: hidden;
+      background: linear-gradient(
+        130deg,
+        rgba(139, 93, 57, 0.64),
+        rgba(43, 28, 22, 0.92)
+      );
+      animation: wordPanelIn 700ms ease both;
+    }
+
+    body[data-scene="intro"].revealing
+    .search-panel > .mini-label {
+      display: none;
+    }
+
+    body[data-scene="intro"].revealing .building {
+      animation: wordBackdropIn 1100ms ease both;
+    }
+
+    #intro #reveal {
+      width: 100%;
+      min-width: 0;
+    }
+
+    #intro #reveal .word-heading {
+      margin: 0 0 30px;
+      color: #f6f1e7;
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(28px, 3.4vw, 48px);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    #intro #reveal .word-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      align-items: center;
+      gap: clamp(24px, 4vw, 64px);
+    }
+
+    #intro #reveal .word-big-year {
+      display: block;
+      min-width: 0;
+      color: #f6f1e7;
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(100px, 16vw, 210px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.065em;
+    }
+
+    #intro #reveal .word-right {
+      min-width: 0;
+    }
+
+    #intro #reveal .word-right h3 {
+      margin: 0 0 12px;
+      color: #f6f1e7;
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(32px, 4vw, 56px);
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    #intro #reveal .word-right > p {
+      margin: 0;
+      color: #ead8c0;
+      font-size: clamp(17px, 1.8vw, 24px);
+      line-height: 1.4;
+    }
+
+    #intro #reveal .word-cast {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 28px;
+      padding: 8px 3px;
+    }
+
+    #intro #reveal .word-cast img {
+      display: block;
+      width: clamp(70px, 8vw, 112px);
+      height: clamp(84px, 9.5vw, 132px);
+      min-width: 0;
+      object-fit: cover;
+      border: 1px solid rgba(255, 241, 219, 0.55);
+      border-radius: 18px;
+      box-shadow: 0 12px 28px rgba(15, 8, 4, 0.35);
+    }
+
+    #intro #reveal .word-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 24px;
+    }
+
+    #intro #reveal #reveal-next {
+      margin: 0;
+    }
+
+    /* Stagger the reveal each time Search is submitted. */
+    body.revealing #reveal .word-heading {
+      animation: wordRiseIn 650ms 100ms both;
+    }
+
+    body.revealing #reveal .word-big-year {
+      animation: wordRiseIn 800ms 200ms both;
+    }
+
+    body.revealing #reveal .word-right h3,
+    body.revealing #reveal .word-right > p {
+      animation: wordRiseIn 700ms 350ms both;
+    }
+
+    body.revealing #reveal .word-cast img {
+      animation: wordCharacterIn 750ms both;
+    }
+
+    body.revealing #reveal .word-cast img:nth-child(1) {
+      --card-angle: -7deg;
+      animation-delay: 500ms;
+    }
+
+    body.revealing #reveal .word-cast img:nth-child(2) {
+      --card-angle: 4deg;
+      animation-delay: 650ms;
+    }
+
+    body.revealing #reveal .word-cast img:nth-child(3) {
+      --card-angle: -3deg;
+      animation-delay: 800ms;
+    }
+
+    body.revealing #reveal .word-footer {
+      animation: wordRiseIn 600ms 950ms both;
+    }
+
+    @keyframes wordPanelIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes wordBackdropIn {
+      from {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1.03);
+      }
+      to {
+        opacity: 0.18;
+        filter: blur(12px);
+        transform: scale(1.12);
+      }
+    }
+
+    @keyframes wordRiseIn {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes wordCharacterIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.8) rotate(0deg);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(var(--card-angle));
+      }
+    }
+
+    @media (max-width: 700px) {
+      #intro #reveal .word-layout {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      #intro #reveal .word-big-year {
+        font-size: clamp(100px, 29vw, 165px);
+      }
+
+      #intro #reveal .word-heading {
+        margin-bottom: 24px;
+      }
+
+      #intro #reveal .word-cast {
+        margin-top: 20px;
+        gap: 12px;
+      }
+
+      #intro #reveal .word-cast img {
+        width: clamp(65px, 20vw, 100px);
+        height: clamp(80px, 24vw, 120px);
+      }
+    }
+
+    @media (max-height: 700px) and (min-width: 701px) {
+      body[data-scene="intro"].revealing .search-panel {
+        padding: 26px 38px;
+      }
+
+      #intro #reveal .word-heading {
+        font-size: 34px;
+        margin-bottom: 22px;
+      }
+
+      #intro #reveal .word-big-year {
+        font-size: 160px;
+      }
+
+      #intro #reveal .word-cast {
+        margin-top: 16px;
+      }
+
+      #intro #reveal .word-cast img {
+        width: 80px;
+        height: 96px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      body[data-scene="intro"].revealing .search-panel,
+      body[data-scene="intro"].revealing .building,
+      body.revealing #reveal .word-heading,
+      body.revealing #reveal .word-big-year,
+      body.revealing #reveal .word-right h3,
+      body.revealing #reveal .word-right > p,
+      body.revealing #reveal .word-cast img,
+      body.revealing #reveal .word-footer {
+        animation: none !important;
+      }
+    }
+  
+
+    #deck .question-bridge {
+      background:
+        radial-gradient(
+          ellipse at 85% 85%,
+          rgba(201, 156, 101, 0.18),
+          transparent 60%
+        ),
+        linear-gradient(
+          135deg,
+          rgba(91, 59, 38, 0.88),
+          rgba(35, 23, 18, 0.96)
+        );
+    }
+
+    #deck .question-bridge > h1 {
+      font-size: clamp(30px, 3.5vw, 50px);
+      margin-bottom: 24px;
+    }
+
+    #deck .question-bridge .content {
+      justify-content: center;
+    }
+
+    .question-story {
+      width: min(1080px, 100%);
+      margin: auto;
+    }
+
+    .question-before {
+      padding: 20px 26px;
+      border: 1px solid rgba(246, 241, 231, 0.2);
+      border-radius: 18px;
+      background: rgba(255, 245, 226, 0.045);
+      animation: questionRise 650ms ease both;
+    }
+
+    #deck .question-before p {
+      margin: 0 0 8px;
+      font-size: 15px;
+      color: #cbb69f;
+    }
+
+    #deck .question-before blockquote {
+      margin: 0;
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(23px, 2.5vw, 34px);
+      font-weight: 500;
+      line-height: 1.3;
+      color: #e0cdb8;
+    }
+
+    .question-divider {
+      width: 1px;
+      height: 34px;
+      margin: 14px auto;
+      background: linear-gradient(
+        transparent,
+        #dfb986,
+        transparent
+      );
+      animation: questionRise 650ms 150ms both;
+    }
+
+    .question-after {
+      text-align: center;
+      padding: 10px 20px 16px;
+      animation: questionRise 800ms 300ms both;
+    }
+
+    #deck .question-after > p {
+      font-size: 15px;
+      color: #d2bda6;
+      margin: 0 0 18px;
+    }
+
+    #deck .question-after blockquote {
+      max-width: 1000px;
+      margin: 0 auto;
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(30px, 4vw, 58px);
+      font-weight: 600;
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+      color: #f6f1e7;
+      text-wrap: balance;
+    }
+
+    .question-after em {
+      color: #edc797;
+      font-weight: 600;
+    }
+
+    .question-after strong {
+      font-weight: 600;
+      color: #edc797;
+      text-decoration: underline;
+      text-decoration-color: rgba(237, 199, 151, 0.45);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 7px;
+    }
+
+    @keyframes questionRise {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-height: 740px) and (min-width: 801px) {
+      #deck .question-bridge > h1 {
+        font-size: 34px;
+        margin-bottom: 16px;
+      }
+
+      .question-before {
+        padding: 14px 22px;
+      }
+
+      .question-divider {
+        height: 20px;
+        margin: 10px auto;
+      }
+
+      #deck .question-after blockquote {
+        font-size: 39px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .question-before {
+        padding: 18px;
+      }
+
+      .question-after {
+        padding: 8px 0 16px;
+      }
+
+      #deck .question-after blockquote {
+        font-size: clamp(29px, 6vw, 43px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .question-before,
+      .question-divider,
+      .question-after {
+        animation: none !important;
+      }
+    }
+  
+#hubcards .hubcard > p, #hubcards .hubcard > small {display:none!important;}
+
+</style>
+</head>
+<body data-scene="hook">
+<div class="ambient" aria-hidden="true">
+</div>
+<header class="toolbar glass">
+<div class="traffic" aria-hidden="true">
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+</div>
+<button class="brand" id="home" aria-label="Open chapter menu">BR<span>TAHT / RESEARCH</span>
+</button>
+<nav id="chaptertabs" aria-label="Presentation chapters">
+</nav>
+<div class="tools">
+<button id="startpage" title="Return to the opening hook">↶ Start</button>
+<button id="overview" aria-label="Open slide overview">Slides <kbd>G</kbd>
+</button>
+<button id="notes" aria-pressed="false">Notes <kbd>N</kbd>
+</button>
+<button id="full">Full screen <kbd>F</kbd>
+</button>
+</div>
+</header>
+<main id="deck" aria-label="Presentation slides">
+</main>
 <section id="hook" class="scene" aria-label="Opening hook">
-<div class="hook-stage"><p class="hook-question">How many of you have ever opened a short-video app intending to watch for just <em>five minutes</em>…</p>
+<div class="hook-stage">
+<p class="hook-question">How many of you have ever opened a short-video app intending to watch for just <em>five minutes</em>…</p>
 <div id="hook-clock" class="hook-clock" aria-label="Time">23:00</div>
 <p class="hook-question hook-question-end">…only to realize an hour, or maybe three hours, has passed?</p>
-<div class="hook-actions">   <button id="hook-jump" class="primary">     Let time slip   </button>    <p id="hook-elapsed" aria-live="polite" hidden></p>    <button id="hook-next" class="subtle" hidden>     Continue   </button> </div>
-</div></section>
-<section id="intro" class="scene" hidden aria-label="Brainrot universe introduction"><div class="building" aria-hidden="true"></div><div class="intro-shade" aria-hidden="true"></div><div class="search-panel glass"><div class="mini-label">ONE WORD. A CULTURAL MOMENT.</div><h1 id="search-title">What is the<br><em>word?</em></h1><p id="search-caption">Type “brainrot” to reveal the word.</p><form id="searchform"><label class="sr-only" for="keyword">Type a keyword</label><div class="searchinput"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="keyword" placeholder="Type a keyword…" autocomplete="off" required><button type="submit" id="searchbutton">Search</button></div></form><div id="reveal" aria-live="polite" hidden><span>Brainrot</span><p class="word-year">Oxford Word of the Year · 2024</p><p class="word-explain">“brain rot” · Fast. Repetitive. Easy to keep watching.</p><div class="word-characters"><img src="shark.png" alt="Brainrot shark character"><img src="ninja.png" alt="Brainrot ninja character"><img src="ballerina.png" alt="Brainrot ballerina character"></div><button id="reveal-next">Continue</button></div><button class="subtle" id="skipintro">Back to quote</button></div></section>
-<section id="quote" class="scene" hidden><div class="quote-card glass"><span class="mini-label">QUOTE OF THE DAY</span><div class="quote-mark" aria-hidden="true">“</div><blockquote>I came for five minutes.<br><em>I stayed for the next video.</em></blockquote><button id="quote-next" class="primary">Discover the word</button><button id="quotestart" class="subtle">↶ Back to start</button></div></section>
-<section id="topic" class="scene" hidden aria-label="Research topic"><div class="topic-backdrop" aria-hidden="true"></div><div class="topic-stage"><p class="topic-overline">An analysis on the determinants of</p><h1>Brainrot Content<br><em>Consumption</em></h1><p class="topic-subtitle">among university students in Northern Vietnam</p><button id="topic-next" class="primary">Explore the research</button><button id="topic-back" class="subtle">Back to the word</button></div></section>
-<section id="hub" class="scene" hidden><div class="hub-head"><span class="mini-label">CHOOSE YOUR CHAPTER</span><h1>Inside the <em>scroll.</em></h1></div><div id="hubcards"></div><div class="hub-bottom"><button id="begin" class="primary">Present from the beginning</button><button id="jumptoend" class="subtle">Explore the wrap-up</button></div></section>
-<section id="wrap" class="scene" hidden><div class="wrap-heading"><span class="mini-label">THE BIG PICTURE</span><h1 id="wrap-title">Who’s in <em>control?</em></h1><p id="wrap-sub">Five forces. One attention.</p></div><div class="orbital" id="orbital" aria-label="Drag to rotate the five factors"><div class="orbit-ring" aria-hidden="true"></div><div class="you glass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 22v-2a8 8 0 0 1 16 0v2"/></svg><b>YOU</b><span>Your attention</span></div><div id="orbitcards"></div></div><div class="wrap-actions"><p id="orbit-detail" aria-live="polite">Drag to orbit · Select a character to revisit a finding</p><button id="breakloop" class="primary">Break the loop</button><button id="pauseorbit" class="subtle" aria-pressed="false">Pause orbit</button><button id="backchapters" class="subtle">Chapter menu</button></div><div class="wrap-note">Characters are visual metaphors. Findings are associations, not causal effects.</div></section><aside id="notepanel" hidden><div class="notetop"><div><small>SPEAKER NOTES</small><h3 id="speaker"></h3></div><button id="closenotes" aria-label="Close speaker notes">×</button></div><p id="notetext"></p><a href="speaker-notes.txt" download>Download all speaker notes</a><p class="notehint">Notes are visible on this screen. Close them before sharing your screen.</p></aside><footer class="controls"><div id="chapter"></div><div class="navigation"><button id="prev" aria-label="Previous slide">←</button><span id="counter" aria-live="polite"></span><button id="next" aria-label="Next slide">→</button></div><span class="shortcut">Use ← → to navigate</span></footer><div class="progress"><i id="progress"></i></div><dialog id="grid"><div class="gridhead"><h2>Slide overview</h2><button id="closegrid" aria-label="Close overview">×</button></div><div id="griditems"></div></dialog><script src="app.js"></script></body></html>
+<div class="hook-actions">   <button id="hook-jump" class="primary">     Let time slip   </button>    <p id="hook-elapsed" aria-live="polite" hidden>
+</p>    <button id="hook-next" class="subtle" hidden>     Continue   </button> </div>
+</div>
+</section>
+<section id="intro" class="scene" hidden aria-label="Brainrot universe introduction">
+<div class="building" aria-hidden="true">
+</div>
+<div class="intro-shade" aria-hidden="true">
+</div>
+<div class="search-panel glass">
+<h1 id="search-title">What is the<br>
+<em>word?</em>
+</h1>
+<p id="search-caption">Type “brainrot” to reveal the word.</p>
+<form id="searchform">
+<label class="sr-only" for="keyword">Type a keyword</label>
+<div class="searchinput">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+<circle cx="10.5" cy="10.5" r="6.5"/>
+<path d="m16 16 5 5"/>
+</svg>
+<input id="keyword" placeholder="Type a keyword…" autocomplete="off" required>
+<button type="submit" id="searchbutton">Search</button>
+</div>
+</form>
+<div id="reveal" aria-live="polite" hidden>
+    <div class="word-result">
+      <h2 class="word-heading">
+        From internet slang<br>
+        to <em>Word of the Year.</em>
+      </h2>
+
+      <div class="word-layout">
+        <strong class="word-big-year">2024</strong>
+
+        <div class="word-right">
+          <h3>“brain rot”</h3>
+          <p>Oxford Word of the Year</p>
+
+          <div class="word-cast">
+            <img
+              src="shark.png"
+              alt="Brainrot shark character"
+              width="120"
+              height="140"
+            >
+            <img
+              src="ninja.png"
+              alt="Brainrot ninja character"
+              width="120"
+              height="140"
+            >
+            <img
+              src="ballerina.png"
+              alt="Brainrot ballerina character"
+              width="120"
+              height="140"
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="word-footer">
+        <button id="reveal-next" class="primary">
+          Continue
+        </button>
+      </div>
+    </div>
+  </div>
+<button class="subtle" id="skipintro">Back to quote</button>
+</div>
+</section>
+<section id="quote" class="scene" hidden>
+<div class="quote-card glass">
+<span class="mini-label">QUOTE OF THE DAY</span>
+<div class="quote-mark" aria-hidden="true">“</div>
+<blockquote>I came for five minutes.<br>
+<em>I stayed for the next video.</em>
+</blockquote>
+<button id="quote-next" class="primary">Discover the word</button>
+<button id="quotestart" class="subtle">↶ Back to start</button>
+</div>
+</section>
+<section id="topic" class="scene" hidden aria-label="Research topic">
+<div class="topic-backdrop" aria-hidden="true">
+</div>
+<div class="topic-stage">
+<p class="topic-overline">An analysis on the determinants of</p>
+<h1>Brainrot Content<br>
+<em>Consumption</em>
+</h1>
+<p class="topic-subtitle">among university students in Northern Vietnam</p>
+<button id="topic-next" class="primary">Explore the research</button>
+<button id="topic-back" class="subtle">Back to the word</button>
+</div>
+</section>
+<section id="hub" class="scene" hidden>
+<div class="hub-head">
+<span class="mini-label">CHOOSE YOUR CHAPTER</span>
+<h1>Inside the <em>scroll.</em>
+</h1>
+</div>
+<div id="hubcards">
+</div>
+<div class="hub-bottom">
+<button id="begin" class="primary">Present from the beginning</button>
+<button id="jumptoend" class="subtle">Explore the wrap-up</button>
+</div>
+</section>
+<section id="wrap" class="scene" hidden>
+<div class="wrap-heading">
+<span class="mini-label">THE BIG PICTURE</span>
+<h1 id="wrap-title">Who’s in <em>control?</em>
+</h1>
+<p id="wrap-sub">Five forces. One attention.</p>
+</div>
+<div class="orbital" id="orbital" aria-label="Drag to rotate the five factors">
+<div class="orbit-ring" aria-hidden="true">
+</div>
+<div class="you glass">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
+<circle cx="12" cy="8" r="4"/>
+<path d="M4 22v-2a8 8 0 0 1 16 0v2"/>
+</svg>
+<b>YOU</b>
+<span>Your attention</span>
+</div>
+<div id="orbitcards">
+</div>
+</div>
+<div class="wrap-actions">
+<p id="orbit-detail" aria-live="polite">Drag to orbit · Select a character to revisit a finding</p>
+<button id="breakloop" class="primary">Break the loop</button>
+<button id="pauseorbit" class="subtle" aria-pressed="false">Pause orbit</button>
+<button id="backchapters" class="subtle">Chapter menu</button>
+</div>
+<div class="wrap-note">Characters are visual metaphors. Findings are associations, not causal effects.</div>
+</section>
+<aside id="notepanel" hidden>
+<div class="notetop">
+<div>
+<small>SPEAKER NOTES</small>
+<h3 id="speaker">
+</h3>
+</div>
+<button id="closenotes" aria-label="Close speaker notes">×</button>
+</div>
+<p id="notetext">
+</p>
+<a href="speaker-notes.txt" download>Download all speaker notes</a>
+<p class="notehint">Notes are visible on this screen. Close them before sharing your screen.</p>
+</aside>
+<footer class="controls">
+<div id="chapter">
+</div>
+<div class="navigation">
+<button id="prev" aria-label="Previous slide">←</button>
+<span id="counter" aria-live="polite">
+</span>
+<button id="next" aria-label="Next slide">→</button>
+</div>
+<span class="shortcut">Use ← → to navigate</span>
+</footer>
+<div class="progress">
+<i id="progress">
+</i>
+</div>
+<dialog id="grid">
+<div class="gridhead">
+<h2>Slide overview</h2>
+<button id="closegrid" aria-label="Close overview">×</button>
+</div>
+<div id="griditems">
+</div>
+</dialog>
+<script src="app.js?v=clean-20261006">
+</script>
+</body>
+</html>
