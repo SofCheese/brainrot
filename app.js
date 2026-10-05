@@ -216,3 +216,334 @@ document.addEventListener('fullscreenchange',()=>{$('full').innerHTML=document.f
 
   document.head.appendChild(style);
 })();
+
+/* Updated Word of the Year layout and entrance animation. */
+(() => {
+  const reveal = document.getElementById('reveal');
+  if (!reveal) return;
+
+  reveal.innerHTML = `
+    <div class="word-result">
+      <h2 class="word-heading">
+        From internet slang<br>
+        to <em>Word of the Year.</em>
+      </h2>
+
+      <div class="word-layout">
+        <strong class="word-big-year">2024</strong>
+
+        <div class="word-right">
+          <h3>“brain rot”</h3>
+          <p>Oxford Word of the Year</p>
+
+          <div class="word-cast">
+            <img
+              src="shark.png"
+              alt="Brainrot shark character"
+              width="120"
+              height="140"
+            >
+            <img
+              src="ninja.png"
+              alt="Brainrot ninja character"
+              width="120"
+              height="140"
+            >
+            <img
+              src="ballerina.png"
+              alt="Brainrot ballerina character"
+              width="120"
+              height="140"
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="word-footer">
+        <button id="reveal-next" class="primary">
+          Continue
+        </button>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('reveal-next').onclick = () => {
+    setScene('topic');
+  };
+
+  const style = document.createElement('style');
+  style.id = 'word-result-final-style';
+
+  style.textContent = `
+    /* Remove only the unwanted Phenomenon captions. */
+    #deck #reveal-flow,
+    #deck .phenomenon-stage > .source {
+      display: none !important;
+    }
+
+    /* Keep the result inside the viewport. */
+    body[data-scene="intro"].revealing #intro {
+      padding: clamp(14px, 3vh, 30px);
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    body[data-scene="intro"].revealing .search-panel {
+      box-sizing: border-box;
+      width: min(1180px, 100%);
+      max-width: 100%;
+      min-width: 0;
+      min-height: 0;
+      margin: auto;
+      padding: clamp(24px, 4vw, 52px);
+      border-radius: 28px;
+      text-align: left;
+      overflow: hidden;
+      background: linear-gradient(
+        130deg,
+        rgba(139, 93, 57, 0.64),
+        rgba(43, 28, 22, 0.92)
+      );
+      animation: wordPanelIn 700ms ease both;
+    }
+
+    body[data-scene="intro"].revealing
+    .search-panel > .mini-label {
+      display: none;
+    }
+
+    body[data-scene="intro"].revealing .building {
+      animation: wordBackdropIn 1100ms ease both;
+    }
+
+    #intro #reveal {
+      width: 100%;
+      min-width: 0;
+    }
+
+    #intro #reveal .word-heading {
+      margin: 0 0 30px;
+      color: #f6f1e7;
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(28px, 3.4vw, 48px);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    #intro #reveal .word-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      align-items: center;
+      gap: clamp(24px, 4vw, 64px);
+    }
+
+    #intro #reveal .word-big-year {
+      display: block;
+      min-width: 0;
+      color: #f6f1e7;
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(100px, 16vw, 210px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.065em;
+    }
+
+    #intro #reveal .word-right {
+      min-width: 0;
+    }
+
+    #intro #reveal .word-right h3 {
+      margin: 0 0 12px;
+      color: #f6f1e7;
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(32px, 4vw, 56px);
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    #intro #reveal .word-right > p {
+      margin: 0;
+      color: #ead8c0;
+      font-size: clamp(17px, 1.8vw, 24px);
+      line-height: 1.4;
+    }
+
+    #intro #reveal .word-cast {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 28px;
+      padding: 8px 3px;
+    }
+
+    #intro #reveal .word-cast img {
+      display: block;
+      width: clamp(70px, 8vw, 112px);
+      height: clamp(84px, 9.5vw, 132px);
+      min-width: 0;
+      object-fit: cover;
+      border: 1px solid rgba(255, 241, 219, 0.55);
+      border-radius: 18px;
+      box-shadow: 0 12px 28px rgba(15, 8, 4, 0.35);
+    }
+
+    #intro #reveal .word-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 24px;
+    }
+
+    #intro #reveal #reveal-next {
+      margin: 0;
+    }
+
+    /* Stagger the reveal each time Search is submitted. */
+    body.revealing #reveal .word-heading {
+      animation: wordRiseIn 650ms 100ms both;
+    }
+
+    body.revealing #reveal .word-big-year {
+      animation: wordRiseIn 800ms 200ms both;
+    }
+
+    body.revealing #reveal .word-right h3,
+    body.revealing #reveal .word-right > p {
+      animation: wordRiseIn 700ms 350ms both;
+    }
+
+    body.revealing #reveal .word-cast img {
+      animation: wordCharacterIn 750ms both;
+    }
+
+    body.revealing #reveal .word-cast img:nth-child(1) {
+      --card-angle: -7deg;
+      animation-delay: 500ms;
+    }
+
+    body.revealing #reveal .word-cast img:nth-child(2) {
+      --card-angle: 4deg;
+      animation-delay: 650ms;
+    }
+
+    body.revealing #reveal .word-cast img:nth-child(3) {
+      --card-angle: -3deg;
+      animation-delay: 800ms;
+    }
+
+    body.revealing #reveal .word-footer {
+      animation: wordRiseIn 600ms 950ms both;
+    }
+
+    @keyframes wordPanelIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes wordBackdropIn {
+      from {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1.03);
+      }
+      to {
+        opacity: 0.18;
+        filter: blur(12px);
+        transform: scale(1.12);
+      }
+    }
+
+    @keyframes wordRiseIn {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes wordCharacterIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.8) rotate(0deg);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(var(--card-angle));
+      }
+    }
+
+    @media (max-width: 700px) {
+      #intro #reveal .word-layout {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      #intro #reveal .word-big-year {
+        font-size: clamp(100px, 29vw, 165px);
+      }
+
+      #intro #reveal .word-heading {
+        margin-bottom: 24px;
+      }
+
+      #intro #reveal .word-cast {
+        margin-top: 20px;
+        gap: 12px;
+      }
+
+      #intro #reveal .word-cast img {
+        width: clamp(65px, 20vw, 100px);
+        height: clamp(80px, 24vw, 120px);
+      }
+    }
+
+    @media (max-height: 700px) and (min-width: 701px) {
+      body[data-scene="intro"].revealing .search-panel {
+        padding: 26px 38px;
+      }
+
+      #intro #reveal .word-heading {
+        font-size: 34px;
+        margin-bottom: 22px;
+      }
+
+      #intro #reveal .word-big-year {
+        font-size: 160px;
+      }
+
+      #intro #reveal .word-cast {
+        margin-top: 16px;
+      }
+
+      #intro #reveal .word-cast img {
+        width: 80px;
+        height: 96px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      body[data-scene="intro"].revealing .search-panel,
+      body[data-scene="intro"].revealing .building,
+      body.revealing #reveal .word-heading,
+      body.revealing #reveal .word-big-year,
+      body.revealing #reveal .word-right h3,
+      body.revealing #reveal .word-right > p,
+      body.revealing #reveal .word-cast img,
+      body.revealing #reveal .word-footer {
+        animation: none !important;
+      }
+    }
+  `;
+
+  document.getElementById('word-result-final-style')?.remove();
+  document.head.appendChild(style);
+})();
