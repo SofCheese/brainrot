@@ -547,3 +547,333 @@ document.addEventListener('fullscreenchange',()=>{$('full').innerHTML=document.f
   document.getElementById('word-result-final-style')?.remove();
   document.head.appendChild(style);
 })();
+
+/* Add a new Pain Point slide after "A student life". */
+(() => {
+  if (window.tahtQuestionSlideAdded) return;
+  window.tahtQuestionSlideAdded = true;
+
+  const style = document.createElement('style');
+
+  style.textContent = `
+    #deck .question-bridge {
+      background:
+        radial-gradient(
+          ellipse at 85% 85%,
+          rgba(201, 156, 101, 0.18),
+          transparent 60%
+        ),
+        linear-gradient(
+          135deg,
+          rgba(91, 59, 38, 0.88),
+          rgba(35, 23, 18, 0.96)
+        );
+    }
+
+    #deck .question-bridge > h1 {
+      font-size: clamp(30px, 3.5vw, 50px);
+      margin-bottom: 24px;
+    }
+
+    #deck .question-bridge .content {
+      justify-content: center;
+    }
+
+    .question-story {
+      width: min(1080px, 100%);
+      margin: auto;
+    }
+
+    .question-before {
+      padding: 20px 26px;
+      border: 1px solid rgba(246, 241, 231, 0.2);
+      border-radius: 18px;
+      background: rgba(255, 245, 226, 0.045);
+      animation: questionRise 650ms ease both;
+    }
+
+    #deck .question-before p {
+      margin: 0 0 8px;
+      font-size: 15px;
+      color: #cbb69f;
+    }
+
+    #deck .question-before blockquote {
+      margin: 0;
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(23px, 2.5vw, 34px);
+      font-weight: 500;
+      line-height: 1.3;
+      color: #e0cdb8;
+    }
+
+    .question-divider {
+      width: 1px;
+      height: 34px;
+      margin: 14px auto;
+      background: linear-gradient(
+        transparent,
+        #dfb986,
+        transparent
+      );
+      animation: questionRise 650ms 150ms both;
+    }
+
+    .question-after {
+      text-align: center;
+      padding: 10px 20px 16px;
+      animation: questionRise 800ms 300ms both;
+    }
+
+    #deck .question-after > p {
+      font-size: 15px;
+      color: #d2bda6;
+      margin: 0 0 18px;
+    }
+
+    #deck .question-after blockquote {
+      max-width: 1000px;
+      margin: 0 auto;
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(30px, 4vw, 58px);
+      font-weight: 600;
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+      color: #f6f1e7;
+      text-wrap: balance;
+    }
+
+    .question-after em {
+      color: #edc797;
+      font-weight: 600;
+    }
+
+    .question-after strong {
+      font-weight: 600;
+      color: #edc797;
+      text-decoration: underline;
+      text-decoration-color: rgba(237, 199, 151, 0.45);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 7px;
+    }
+
+    @keyframes questionRise {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-height: 740px) and (min-width: 801px) {
+      #deck .question-bridge > h1 {
+        font-size: 34px;
+        margin-bottom: 16px;
+      }
+
+      .question-before {
+        padding: 14px 22px;
+      }
+
+      .question-divider {
+        height: 20px;
+        margin: 10px auto;
+      }
+
+      #deck .question-after blockquote {
+        font-size: 39px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .question-before {
+        padding: 18px;
+      }
+
+      .question-after {
+        padding: 8px 0 16px;
+      }
+
+      #deck .question-after blockquote {
+        font-size: clamp(29px, 6vw, 43px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .question-before,
+      .question-divider,
+      .question-after {
+        animation: none !important;
+      }
+    }
+  `;
+
+  document.head.appendChild(style);
+
+  function addQuestionSlide() {
+    if (!slides.length) return false;
+
+    if (slides.some(item => item.id === 'question-bridge')) {
+      return true;
+    }
+
+    const anchor = slides.findIndex(item =>
+      clean(item.title).includes('A student life.')
+    );
+
+    if (anchor < 0) return true;
+
+    const insertionIndex = anchor + 1;
+
+    const newSlide = {
+      id: 'question-bridge',
+      section: 'Pain Point',
+      speaker: slides[anchor].speaker,
+      title: 'The question<br><em>behind the scroll.</em>',
+      dark: true,
+      kind: 'question-bridge',
+      source: '',
+      body: `
+        <div class="question-story">
+          <div class="question-before">
+            <p>So the problem is not simply:</p>
+
+            <blockquote>
+              “Why do students watch short videos?”
+            </blockquote>
+          </div>
+
+          <div class="question-divider" aria-hidden="true"></div>
+
+          <div class="question-after">
+            <p>The more interesting question is:</p>
+
+            <blockquote>
+              “What <em>keeps them scrolling</em>
+              when they
+              <strong>did not originally plan to?</strong>”
+            </blockquote>
+          </div>
+        </div>
+      `,
+      notes:
+        'So the problem is not simply: Why do students watch ' +
+        'short videos? The more interesting question is: ' +
+        'What keeps them scrolling when they did not originally ' +
+        'plan to? Pause on this question, then continue to the ' +
+        'next slide to introduce the platform-side and user-side factors.'
+    };
+
+    slides.splice(insertionIndex, 0, newSlide);
+
+    /* Keep all four chapter tabs aligned with their slides. */
+    chapters.forEach(chapter => {
+      if (chapter.start >= insertionIndex) {
+        chapter.start += 1;
+      }
+
+      if (chapter.end >= insertionIndex) {
+        chapter.end += 1;
+      }
+    });
+
+    /* Preserve the currently displayed slide. */
+    if (current >= insertionIndex) {
+      current += 1;
+    }
+
+    const wrapIndex = slides.findIndex(item =>
+      clean(item.title).includes('Before the next video')
+    );
+
+    /* Use the updated wrap-up position. */
+    go = function (index) {
+      if (!slides.length) return;
+
+      if (index < 0) {
+        setScene('hub');
+        return;
+      }
+
+      current = Math.max(
+        0,
+        Math.min(slides.length - 1, index)
+      );
+
+      if (current === wrapIndex) {
+        setScene('wrap');
+        return;
+      }
+
+      setScene('deck');
+      render();
+    };
+
+    const previousNext = next;
+    const previousBack = previous;
+
+    next = function () {
+      if (scene === 'wrap') {
+        go(wrapIndex + 1);
+        return;
+      }
+
+      previousNext();
+    };
+
+    previous = function () {
+      if (scene === 'wrap') {
+        go(wrapIndex - 1);
+        return;
+      }
+
+      previousBack();
+    };
+
+    document.getElementById('next').onclick = () => next();
+    document.getElementById('prev').onclick = () => previous();
+
+    /* Include the new slide in the slide overview. */
+    document.getElementById('griditems').innerHTML = slides
+      .map((item, index) => `
+        <button class="griditem" data-i="${index}">
+          <small>
+            ${String(index + 1).padStart(2, '0')}
+            / ${item.section}
+          </small>
+          <b>
+            ${
+              index === wrapIndex
+                ? 'Who’s in control?'
+                : clean(item.title)
+            }
+          </b>
+        </button>
+      `)
+      .join('');
+
+    if (scene === 'deck') {
+      go(current);
+    } else {
+      updateTabs();
+    }
+
+    return true;
+  }
+
+  /* Wait for the existing presentation data to finish loading. */
+  if (!addQuestionSlide()) {
+    let attempts = 0;
+
+    const loadingCheck = setInterval(() => {
+      attempts += 1;
+
+      if (addQuestionSlide() || attempts >= 600) {
+        clearInterval(loadingCheck);
+      }
+    }, 100);
+  }
+})();
