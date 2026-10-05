@@ -438,6 +438,176 @@
 #hubcards .hubcard > p, #hubcards .hubcard > small {display:none!important;}
 
 </style>
+<style id="slide-balance-fix">
+  /* 1. Hide the remaining questionnaire-item citation. */
+  #deck .relief-photo blockquote cite {
+    display: none !important;
+  }
+
+  /* 2. Universities slide: equal columns, aligned at the top. */
+  #deck .university-photo .split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start !important;
+    gap: clamp(28px, 4vw, 64px);
+    width: 100%;
+  }
+
+  #deck .university-photo .split > div {
+    min-width: 0;
+  }
+
+  #deck .university-photo .editorial-photo {
+    margin: 0 0 18px !important;
+    transform: none !important;
+    border-radius: 18px;
+  }
+
+  #deck .university-photo .editorial-photo img {
+    display: block;
+    width: 100%;
+    height: clamp(160px, 24dvh, 250px) !important;
+    object-fit: cover;
+    object-position: center 45% !important;
+  }
+
+  #deck .university-photo .split > div:last-child {
+    align-self: start !important;
+    padding-top: 0;
+  }
+
+  #deck .university-photo ul {
+    margin-top: 16px;
+    padding-left: 1.2em;
+  }
+
+  #deck .university-photo li {
+    margin-bottom: 18px;
+    line-height: 1.5;
+  }
+
+  /* 3. Wrap-up: centre the whole composition below the toolbar. */
+  #wrap {
+    box-sizing: border-box;
+    top: 100px !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    height: auto !important;
+    padding: 18px 24px 24px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: safe center;
+    gap: 0;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  #wrap .wrap-heading {
+    flex: 0 0 auto;
+    margin: 0 !important;
+    text-align: center;
+  }
+
+  #wrap .wrap-heading h1 {
+    margin: 10px 0 8px !important;
+    font-size: clamp(34px, 3.8vw, 58px);
+    line-height: 1.12;
+  }
+
+  #wrap-sub,
+  #wrap .wrap-note,
+  #wrap .you > span {
+    display: none !important;
+  }
+
+  /* Reserve enough space for the moving character cards. */
+  #wrap #orbital {
+    flex: 0 0 auto;
+    width: min(1080px, 94vw);
+    height: clamp(310px, 45dvh, 470px) !important;
+    margin: 8px auto 0 !important;
+  }
+
+  #wrap .orbit-card {
+    box-sizing: border-box;
+    width: 126px !important;
+    height: 160px !important;
+    padding: 7px;
+  }
+
+  #wrap .orbit-card img,
+  #wrap .orbit-card .character-window {
+    width: 100%;
+    height: 98px !important;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  #wrap .orbit-card b {
+    margin-top: 7px;
+    font-size: 13px;
+  }
+
+  #wrap .orbit-card span {
+    font-size: 10px;
+  }
+
+  #wrap .you {
+    width: 132px;
+    height: 148px;
+  }
+
+  /* Separate the instructions and buttons from the orbit. */
+  #wrap .wrap-actions {
+    flex: 0 0 auto;
+    width: min(850px, 100%);
+    margin: 18px auto 0 !important;
+    padding: 0;
+    text-align: center;
+  }
+
+  #wrap #orbit-detail {
+    max-width: 760px;
+    min-height: 40px;
+    margin: 0 auto 12px !important;
+    line-height: 1.5;
+  }
+
+  /* Smaller screens. */
+  @media (max-width: 800px) {
+    #deck .university-photo .split {
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    #wrap {
+      top: 90px !important;
+      padding-right: 12px !important;
+      padding-left: 12px !important;
+    }
+
+    #wrap .orbit-card {
+      width: 100px !important;
+      height: 138px !important;
+    }
+
+    #wrap .orbit-card img,
+    #wrap .orbit-card .character-window {
+      height: 78px !important;
+    }
+
+    #wrap .orbit-card b {
+      font-size: 11px;
+    }
+
+    #wrap .you {
+      width: 104px;
+      height: 126px;
+    }
+  }
+</style>
 </head>
 <body data-scene="hook">
 <div class="ambient" aria-hidden="true">
