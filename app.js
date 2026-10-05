@@ -203,3 +203,16 @@ document.addEventListener('fullscreenchange',()=>{$('full').innerHTML=document.f
   document.getElementById('woty-result-style')?.remove();
   document.head.appendChild(style);
 })();
+
+/* Hide the prompt once the attention flow has appeared. */
+(() => {
+  const style = document.createElement('style');
+
+  style.textContent = `
+    #reveal-flow[aria-expanded="true"] {
+      display: none !important;
+    }
+  `;
+
+  document.head.appendChild(style);
+})();
