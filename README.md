@@ -1,4 +1,4 @@
-# TAHT Brainrot — Opening flow v6
+# TAHT Brainrot
 
 ## Cập nhật GitHub
 1. Giải nén ZIP vào một thư mục mới.
