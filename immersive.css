@@ -36,3 +36,46 @@ body[data-scene=deck] .slide{min-height:0;flex-shrink:1}
 .wide-photo{transform:none;margin:0 0 18px;border-radius:18px}.wide-photo img{height:145px;object-position:center 63%}.wide-photo figcaption{position:absolute;bottom:0;right:0;border-radius:10px 0 0 0;font-size:11px;padding:6px 10px}.student-recommendation .cards article{padding:16px}.student-recommendation .cards h3{font-size:25px}.student-recommendation .cards p{font-size:16px}.university-photo .compact-photo img{height:170px}.university-photo h3{font-size:26px;margin:10px 0}
 @media(max-height:750px) and (min-width:801px){.compact-photo img{height:110px}.wide-photo img{height:100px}.university-photo .compact-photo img{height:115px}.relief-photo .bigstat strong{font-size:50px}.relief-photo blockquote{font-size:18px}.photo-copy .bars{gap:14px}}
 @media(max-width:800px){.compact-photo img{height:180px}.wide-photo img{height:160px}.photo-copy .barrow{grid-template-columns:110px 1fr 60px}.environment-photo .split{grid-template-columns:1fr}.student-recommendation .cards{grid-template-columns:1fr}.photo-copy .ribbon{flex-wrap:wrap}}
+/* Opening story: hook → quote → word → topic → chapters. */
+body[data-scene=hook] .toolbar,body[data-scene=topic] .toolbar{display:none}
+#hook,#topic{display:flex;align-items:center;justify-content:center;padding:35px 5vw}
+#hook{background:radial-gradient(ellipse at 50% 35%,#87573677,transparent 70%),#2d1d17}
+.hook-stage{width:min(1120px,100%);text-align:center;margin:auto}
+.hook-question{font-size:clamp(19px,2.1vw,30px);line-height:1.45;max-width:960px;margin:0 auto;color:#e4d0b9}
+.hook-question em{color:#fff6e7;font-weight:600}
+.hook-clock{font:700 clamp(110px,18vw,250px)/1.1 Fraunces,Georgia,serif;letter-spacing:-.06em;margin:16px 0;color:#f8f0e0;font-variant-numeric:tabular-nums}
+.hook-question-end{font-size:clamp(19px,2vw,28px)}
+.hook-actions{margin-top:25px;min-height:145px}
+.hook-actions p{font-size:15px;color:#d6bea4}.hook-actions .subtle{display:block;margin:auto}
+#quote blockquote{margin:30px 0 25px}
+#intro .word-characters{display:flex;gap:12px;justify-content:center;margin:18px 0}
+.word-characters img{height:82px;width:82px;border-radius:17px;object-fit:cover;border:1px solid #fff5}
+#intro .word-year{font-size:20px;color:#f3d19d;margin-top:14px}
+#intro .word-explain{font-size:15px;color:#e8d9c6}
+.revealing #reveal span{font-size:clamp(54px,7vw,98px);letter-spacing:-3px}
+.revealing .search-panel{min-height:420px}
+#topic{isolation:isolate;overflow:auto;background:#241711}
+.topic-backdrop{position:absolute;inset:-30px;background:linear-gradient(90deg,#241711e8,#241711be),url('phone-scroll.jpg') center 45%/cover;z-index:-1;transform:translate(calc(var(--mx,0)*-10px),calc(var(--my,0)*-8px)) scale(1.04);transition:transform .6s ease}
+.topic-stage{width:min(1320px,100%);text-align:center;margin:auto}
+.topic-overline{font-size:clamp(15px,1.8vw,25px);letter-spacing:.08em;color:#d5bfa6;margin-bottom:25px}
+.topic-stage h1{max-width:none;font-size:clamp(52px,7.7vw,115px);line-height:1.04;letter-spacing:-.045em;margin:0 auto 30px;text-shadow:0 4px 40px #120a0570}
+.topic-stage h1 em{color:#e4bf8f}
+.topic-subtitle{font-size:clamp(18px,2.2vw,29px);font-weight:300;color:#e4d0b9;margin-bottom:38px}
+#topic-back{display:block;margin:12px auto 0}
+.hubcard{display:flex;flex-direction:column;justify-content:center}
+.phenomenon-stage .kicker{display:none}
+.slide.phenomenon-stage{background:linear-gradient(125deg,#302015e8,#493021da),url('brainrot-building.png') center/cover}
+.slide.phenomenon-stage>h1{text-align:center;max-width:none;font-size:clamp(45px,6vw,90px);margin:8px 0 30px;letter-spacing:-.035em}
+.phenomenon-stage .content{justify-content:center}
+.phenomenon-boxes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;width:100%}
+.phenomenon-boxes article{padding:22px 18px;text-align:center;border-radius:20px;background:#fff1}
+.phen-number{font-size:13px;letter-spacing:3px;color:#d6b68b}
+.phenomenon-boxes h3{font-size:clamp(23px,2.4vw,34px);min-height:2.3em;display:flex;align-items:center;justify-content:center;margin:15px 0 10px}
+.phenomenon-boxes p{font-size:clamp(15px,1.4vw,20px);color:#deccb5;margin:0;line-height:1.55}
+#reveal-flow{display:block;margin:20px auto 0;font-size:13px}
+.attention-flow{display:flex;align-items:center;justify-content:center;gap:22px;padding:20px 12px 4px;animation:sceneIn .55s ease}
+.attention-flow span{font-family:Fraunces,Georgia,serif;font-size:clamp(20px,2.3vw,33px);text-align:center}.attention-flow b{color:#d5ae7e;font-size:28px}
+.phenomenon-stage .source{text-align:center;font-size:11px}
+@media(max-height:750px) and (min-width:801px){.hook-clock{font-size:165px;margin:8px 0}.hook-question{font-size:21px}.hook-actions{margin-top:15px;min-height:125px}.slide.phenomenon-stage>h1{font-size:56px;margin-bottom:18px}.phenomenon-boxes article{padding:15px}.phenomenon-boxes h3{font-size:26px}.attention-flow{padding-top:12px}.attention-flow span{font-size:25px}#reveal-flow{margin-top:12px}.topic-stage h1{font-size:76px}.topic-subtitle{margin-bottom:25px}}
+@media(max-width:800px){#hook,#topic{padding:28px 20px}.hook-clock{font-size:clamp(100px,24vw,180px)}.hook-question{font-size:19px}.hook-actions{min-height:135px}.topic-stage h1{font-size:clamp(43px,9vw,68px)}.topic-overline{font-size:15px}.topic-subtitle{font-size:19px}.phenomenon-boxes{grid-template-columns:1fr;gap:12px}.phenomenon-boxes article{padding:14px}.phenomenon-boxes h3{min-height:0;font-size:25px;margin:7px 0}.phenomenon-boxes p{font-size:15px}.slide.phenomenon-stage>h1{font-size:43px;margin-bottom:20px}.attention-flow{flex-direction:column;gap:8px}.attention-flow b{transform:rotate(90deg)}.word-characters img{height:64px;width:64px}}
+@media(prefers-reduced-motion:reduce){.topic-backdrop{transform:none}}

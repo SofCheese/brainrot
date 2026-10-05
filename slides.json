@@ -2,52 +2,12 @@
   {
     "section": "Phenomenon",
     "speaker": "Hồng Minh",
-    "title": "Just five<br><em>more minutes.</em>",
-    "body": "<div class=\"clockbox\"><div id=\"clock\">23:00</div><button class=\"jump\" id=\"jump\">Let time slip</button><span id=\"elapsed\">A familiar intention.</span></div><p class=\"hook\">Have you ever opened a short-video app for five minutes…<br>and stayed much longer?</p>",
-    "notes": "Ladies and gentlemen, before we begin, a quick show of hands. How many of you have opened a short-video app intending to watch for just five minutes, only to realise that an hour—or even three—has passed? [Press ‘Let time slip’. Pause for hands.] Thank you. You can put your hands down.",
-    "source": "",
+    "title": "Phenomenon",
+    "kind": "phenomenon-stage",
     "dark": true,
-    "kind": "opening"
-  },
-  {
-    "section": "Phenomenon",
-    "speaker": "Hồng Minh",
-    "title": "BRAIN<br><em>ROT.</em>",
-    "body": "<p class=\"lead narrow\">Fast. Repetitive. Easy to keep watching.</p><div class=\"tags\"><span>TikTok</span><span>Instagram Reels</span><span>YouTube Shorts</span></div><div class=\"brainrot-gallery\" aria-label=\"Examples of brainrot characters\"><img src=\"shark.png\" alt=\"Brainrot shark character\"><img src=\"ninja.png\" alt=\"Brainrot ninja character\"><img src=\"ballerina.png\" alt=\"Brainrot ballerina character\"></div>",
-    "notes": "That experience brings us to brainrot: a term in digital culture associated here with fast, repetitive content offering immediate stimulation. Our study uses a specific survey definition. We are not claiming that every short video is brainrot or that the term is a medical diagnosis.",
-    "source": "Report §1.4 and questionnaire definition",
-    "dark": true,
-    "kind": "word"
-  },
-  {
-    "section": "Phenomenon",
-    "speaker": "Hồng Minh",
-    "title": "From internet slang<br>to <em>Word of the Year.</em>",
-    "body": "<div class=\"fact\"><strong>2024</strong><div><h3>“brain rot”</h3><p>Oxford Word of the Year</p></div></div><p class=\"lead\">A cultural signal. A research question.</p>",
-    "notes": "Oxford selected ‘brain rot’ as its Word of the Year for 2024. That recognition shows the cultural reach of the term; it is not clinical evidence of harm. For our team, it raises a question: what is associated with this viewing pattern among university students?",
-    "source": "Oxford University Press (2024), cited in the report",
-    "dark": false,
-    "kind": ""
-  },
-  {
-    "section": "Phenomenon",
-    "speaker": "Hồng Minh",
-    "title": "What keeps<br>students <em>scrolling?</em>",
-    "body": "<p class=\"topic\">An analysis on the determinants of brainrot content consumption among university students in Northern Vietnam</p><div class=\"byline\"><b>National Economics University · BFT 67A</b><p>Triệu Hồng Minh · Trần Ngọc Mai · Lê Cao Thành<br>Nguyễn Đức Kiên · Vũ Chí Kiên</p><p>Supervisor: Lê Thùy Linh</p></div>",
-    "notes": "This is the focus of our research: an analysis of the determinants of brainrot content consumption among university students in Northern Vietnam. We examine platform characteristics alongside social and psychological factors. Our reported results concern associations within the sample.",
-    "source": "Report cover and §§1.2–1.4",
-    "dark": true,
-    "kind": ""
-  },
-  {
-    "section": "Phenomenon",
-    "speaker": "Hồng Minh",
-    "title": "Our <em>research journey.</em>",
-    "body": "<div class=\"cards\"><article><span class=\"index\">01</span><h3>The phenomenon</h3><p>A familiar viewing loop.</p></article><article><span class=\"index\">02</span><h3>The pain point</h3><p>The user and the platform.</p></article><article><span class=\"index\">03</span><h3>The insight</h3><p>Five potential determinants.</p></article><article><span class=\"index\">04</span><h3>The evidence & solution</h3><p>Results translated into action.</p></article></div>",
-    "notes": "We will follow four stages: the phenomenon, the pain point, the insight, and finally the evidence and solutions. To explore the environment and the motivations behind continued viewing, I will hand over to Mike.",
-    "source": "",
-    "dark": false,
-    "kind": ""
+    "body": "<div class=\"phenomenon-boxes\"><article class=\"glass\"><span class=\"phen-number\">01</span><h3>Content</h3><p>Fast · Repetitive<br>Easy to consume</p></article><article class=\"glass\"><span class=\"phen-number\">02</span><h3>Interface &amp;<br>Experience</h3><p>Swipe to explore<br>Immediate engagement</p></article><article class=\"glass\"><span class=\"phen-number\">03</span><h3>Platforms &amp;<br>Algorithms</h3><p>TikTok · Reels · Shorts<br>Continuous recommendations</p></article></div><button id=\"reveal-flow\" class=\"subtle\" aria-expanded=\"false\" aria-controls=\"attention-flow\">Click to connect the dots</button><div id=\"attention-flow\" class=\"attention-flow\" hidden aria-live=\"polite\"><span>Attention economy</span><b aria-hidden=\"true\">→</b><span>User retention</span><b aria-hidden=\"true\">→</b><span>Hard to stop</span></div>",
+    "notes": "Introduce three parts of the viewing environment: content, interface and experience, and platforms and algorithms. Content is fast, repetitive and easy to consume. Swiping makes new content immediately available. Platforms keep recommending the next item. Click once on the slide to reveal: Attention economy → User retention → Hard to stop. This is a conceptual framing of the phenomenon, not a causal pathway tested by our cross-sectional study.",
+    "source": "Conceptual framing · Report §1.4; Qin et al. (2022); Boeker & Urman (2022)"
   },
   {
     "section": "Pain point",

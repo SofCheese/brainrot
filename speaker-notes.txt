@@ -1,176 +1,97 @@
-INTERACTIVE OPENING — Hồng Minh
-Show the apartment universe. Ask: What keeps us moving from one video to the next? Type any keyword and press Search. BRAINROT appears, then the quote page follows. The quote is a presentation prompt written by the team, not a quotation from a published researcher. Continue to the four-chapter menu.
+OPENING SEQUENCE
 
-CHAPTER NAVIGATION
-Select any chapter card or one of the four tabs. The active chapter glows. Keyboard: 1–4 selects chapters; Home opens the menu; End opens the wrap-up; N toggles slide notes.
-
-INTERACTIVE WRAP-UP — Vũ Chí Kiên
-Five factors surround YOU as a visual metaphor. Drag to rotate; select each card to revisit its correlation. Say: Both our environment and our motivations are associated with viewing. The practical goal is to make the next choice intentional. Press Break the loop. The headline becomes Your attention. Your choice. This action is a presentation metaphor, not a tested intervention.
-
-01. Phenomenon — Hồng Minh
-Just five  more minutes. 
-
+1. HOOK
 Ladies and gentlemen, before we begin, a quick show of hands. How many of you have opened a short-video app intending to watch for just five minutes, only to realise that an hour—or even three—has passed? [Press ‘Let time slip’. Pause for hands.] Thank you. You can put your hands down.
 
-Source: 
+2. QUOTE
+I came for five minutes. I stayed for the next video.
 
-02. Phenomenon — Hồng Minh
-BRAIN  ROT. 
+3. SEARCH
+Type brainrot and press Search. Pause on the Oxford Word of the Year 2024 reveal, then Continue.
 
-That experience brings us to brainrot: a term in digital culture associated here with fast, repetitive content offering immediate stimulation. Our study uses a specific survey definition. We are not claiming that every short video is brainrot or that the term is a medical diagnosis.
-
-Source: Report §1.4 and questionnaire definition
-
-03. Phenomenon — Hồng Minh
-From internet slang to  Word of the Year. 
-
-Oxford selected ‘brain rot’ as its Word of the Year for 2024. That recognition shows the cultural reach of the term; it is not clinical evidence of harm. For our team, it raises a question: what is associated with this viewing pattern among university students?
-
-Source: Oxford University Press (2024), cited in the report
-
-04. Phenomenon — Hồng Minh
-What keeps students  scrolling? 
-
+4. RESEARCH TOPIC
 This is the focus of our research: an analysis of the determinants of brainrot content consumption among university students in Northern Vietnam. We examine platform characteristics alongside social and psychological factors. Our reported results concern associations within the sample.
 
-Source: Report cover and §§1.2–1.4
+TEAM
+Triệu Hồng Minh · Trần Ngọc Mai · Lê Cao Thành · Nguyễn Đức Kiên · Vũ Chí Kiên
+Supervisor: Lê Thùy Linh
 
-05. Phenomenon — Hồng Minh
-Our  research journey. 
+01. Phenomenon
+Hồng Minh
+Introduce three parts of the viewing environment: content, interface and experience, and platforms and algorithms. Content is fast, repetitive and easy to consume. Swiping makes new content immediately available. Platforms keep recommending the next item. Click once on the slide to reveal: Attention economy → User retention → Hard to stop. This is a conceptual framing of the phenomenon, not a causal pathway tested by our cross-sectional study.
 
-We will follow four stages: the phenomenon, the pain point, the insight, and finally the evidence and solutions. To explore the environment and the motivations behind continued viewing, I will hand over to Mike.
-
-Source: 
-
-06. Pain point — Mike
-A student life.  A continuous feed. 
-
+02. A student life.  A continuous feed. 
+Mike
 The interesting thing is not simply that we watch. Sometimes we do not realise why we keep watching. We obtained 402 qualified responses, predominantly from students in Hanoi. Around 69 percent were aged 18 to 20. These students face ordinary academic responsibilities while having easy access to short-form content.
 
-Source: Report Table 4.1; ages 18–20 = 278/402
-
-07. Pain point — Mike
-Within us.  Around us. 
-
+03. Within us.  Around us. 
+Mike
 We divide the question into two sides. Platforms personalise recommendations and make continuation effortless. Users also bring social influences, entertainment preferences and a tendency to seek immediate relief. Our dilemma is whether continued viewing is associated with the user, the surrounding environment, or both.
 
-Source: Report §§2.1–2.2
-
-08. Pain point — Mike
-The missing  connection. 
-
+04. The missing  connection. 
+Mike
 Our gap concerns the construct, the explanation and the context. We bring five proposed factors into one research framework and apply it to this student sample. The current results examine them separately, so comparing their independent contributions remains a next step. Kiên will now introduce those five factors.
 
-Source: Report §2.1.3
-
-09. Insight — Nguyễn Đức Kiên
-Five factors.  One outcome. 
-
+05. Five factors.  One outcome. 
+Nguyễn Đức Kiên
 We examine five potential determinants. AI refers to perceived recommendation responsiveness, not artificial intelligence-generated content. UXF concerns effortless continuation. SI captures peer influence; PEV captures enjoyment; PS captures seeking immediate digital relief. Our outcome, BCC, measures unintended and difficult-to-regulate viewing. Each hypothesis proposes a positive association with BCC.
 
-Source: Report proposed model and Appendix A
-
-10. Insight — Nguyễn Đức Kiên
-From literature to  questions. 
-
+06. From literature to  questions. 
+Nguyễn Đức Kiên
 The questions were developed from concepts in earlier studies and adapted to our context. For example, recommendation research informs AI, while compensatory internet use informs PS. We are not claiming to reproduce every original scale. Our instrument contains 28 items, including a seven-item BCC measure.
 
-Source: Report Table 3.1 and Appendix A
-
-11. Insight — Nguyễn Đức Kiên
-Immediate relief.  Low effort. 
-
+07. Immediate relief.  Low effort. 
+Nguyễn Đức Kiên
 The PS mean is 3.78 out of five. This suggests agreement with statements about seeking accessible, low-effort digital relief. The statement shown is a questionnaire item, not a participant quotation. We cannot conclude that students prefer brainrot over all traditional entertainment. Thành will now explain what the numerical tests actually show.
 
-Source: Report Table 4.6 and Appendix A
-
-12. Evidence — Lê Cao Thành
-How we  tested it. 
-
+08. How we  tested it. 
+Lê Cao Thành
 Our report presents a cross-sectional quantitative survey. We used 28 substantive Likert items across six constructs. We examined descriptions, reliability and exploratory structure before testing relationships. The results shown here are five separate regressions, not one model controlling for all predictors. Optional open responses were supplementary.
 
-Source: Report Chapters 3–4
-
-13. Evidence — Lê Cao Thành
-Where students  spend their attention. 
-
+09. Where students  spend their attention. 
+Lê Cao Thành
 TikTok was the most-used platform for 61.7 percent of the sample. Almost half selected the two-to-three-hour or three-plus-hour daily short-video categories. Brainrot-specific exposure was lower: 59.7 percent selected under 15 or 15-to-30 minutes, and 11.4 percent reported none in the past seven days. These are different measures and recall periods; we do not equate all short videos with brainrot.
 
-Source: Report Table 4.1 and daily-duration tables
-
-14. Evidence — Lê Cao Thành
-Consistency  with a caveat. 
-
+10. Consistency  with a caveat. 
+Lê Cao Thành
 We first checked internal consistency. SI, PEV, PS and BCC had alpha values between .789 and .872. AI was .630 and UXF was .595. We retained the reported measures, but we should not describe every scale as highly reliable. The weaker AI and UXF reliability is a limitation.
 
-Source: Report Tables 4.8–4.13
-
-15. Evidence — Lê Cao Thành
-Exploring the  measurement structure. 
-
+11. Exploring the  measurement structure. 
+Lê Cao Thành
 The predictor KMO was .884 and the BCC KMO was .894, with significant Bartlett tests. The reported PCA table identifies five predictor components explaining 57.895 percent of variance. BCC has one component explaining 56.839 percent. We use the table values, which differ slightly from the report narrative. This does not mean BCC has five dimensions or that factor separation is fully confirmed.
 
-Source: Report Tables 4.14–4.17; values taken from tables
-
-16. Evidence — Lê Cao Thành
-Two associations  stand out. 
-
+12. Two associations  stand out. 
+Lê Cao Thành
 Social Influence has the largest observed correlation, .673, followed by Perceived Entertainment Value at .632. PS is .430, UXF .357, and AI .222. All five associations are positive and statistically significant. These are correlations, so we cannot conclude that one factor causes consumption or that it has the largest independent effect.
 
-Source: Report Tables 4.18, 4.22, 4.26, 4.30 and 4.34
-
-17. Evidence — Lê Cao Thành
-Five tests.  Positive associations. 
-
+13. Five tests.  Positive associations. 
+Lê Cao Thành
 The separate regressions support the hypothesised positive associations. Social Influence alone accounts for 45.3 percent of the variation in BCC in its simple model, followed by 40 percent for PEV. These percentages overlap and must not be added. Standardised beta equals Pearson r in these single-predictor models. This is not an adjusted ranking of determinants.
 
-Source: Report Tables 4.19–4.38
-
-18. Evidence — Lê Cao Thành
-The social context  deserves attention. 
-
+14. The social context  deserves attention. 
+Lê Cao Thành
 The pattern makes social context and entertainment motives important areas to consider. But platform factors also have positive associations, and we have not isolated independent effects. Our practical question is how to support intentional use while recognising why students watch. Chí Kiên will connect these findings to recommendations.
 
-Source: Report §5.1
-
-19. Solutions — Vũ Chí Kiên
-For students:  make the stop intentional. 
-
+15. For students:  make the stop intentional. 
+Vũ Chí Kiên
 Our recommendations combine the original literature and our findings. Qin and colleagues connect system quality with flow, while our UXF result supports considering deliberate stopping points. FOMO literature and our SI result motivate peer agreements around sharing. Entertainment research and our PEV result suggest preserving enjoyment through planned breaks. These are proposals, not interventions we tested.
 
-Source: Qin et al. (2022); Przybylski et al. (2013); Zhang et al. (2019) · Report §5.2.1
-
-20. Solutions — Vũ Chí Kiên
-For universities:  address the trigger. 
-
+16. For universities:  address the trigger. 
+Vũ Chí Kiên
 Kardefelt-Winther's compensatory internet use model and Liu and colleagues' stress findings informed PS. Our PS–BCC correlation is .430. Universities could incorporate trigger awareness and break planning into learning-skills activities. Peer involvement can help align boundaries with actual student routines. Evaluate these proposals before scaling them.
 
-Source: Kardefelt-Winther (2014); Liu et al. (2021) · Report §5.2.2
-
-21. Solutions — Vũ Chí Kiên
-For platforms:  give control a place. 
-
+17. For platforms:  give control a place. 
+Vũ Chí Kiên
 Boeker and Urman's audit shows that behaviour shapes recommendations. Combined with our AI result, this motivates clearer explanations and controls. Qin and colleagues' time-distortion findings and our UXF result support testing stopping cues. A successful design should help people stop when intended, rather than assume that more engagement is always better.
 
-Source: Boeker & Urman (2022); Qin et al. (2022) · Report §5.2.3
-
-22. Solutions — Vũ Chí Kiên
-What we know.  What comes next. 
-
+18. What we know.  What comes next. 
+Vũ Chí Kiên
 Our study is a snapshot based on self-report and a geographically concentrated sample. AI and UXF reliability also warrants caution. The next steps are broader samples, stronger measurement and simultaneous models. We did not measure clinical addiction, cognitive decline or academic performance as outcomes.
 
-Source: Report §5.3
-
-23. Discussion — Research team
-Before the next video,  make a choice. 
-
+19. Before the next video,  make a choice. 
+Research team
 Our main message is that both platform characteristics and user-side factors are associated with BCC in this sample. Social influence and entertainment show the largest observed correlations. The practical goal is more intentional consumption. Thank you for listening. We welcome your questions.
 
-Source: Research team · National Economics University
-
-24. References — Research team
-Selected  references. 
-
+20. Selected  references. 
+Research team
 Backup slide. These selected studies support the construct definitions and recommendations. The group's items are researcher-developed. For questions about measurement, refer to Table 3.1 and Appendix A of the main report. BCC is not the original BRS-14.
-
-Source: Full conceptual source mapping: report Table 3.1 and bibliography
